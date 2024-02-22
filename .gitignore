@@ -19,3 +19,7 @@ vendor/
 
 # Go workspace file
 go.work
+
+# IDE Settings
+*.idea
+*.vscode

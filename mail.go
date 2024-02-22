@@ -1,9 +1,9 @@
 package azmail
 
 type Mail struct {
-	Recipients  MailRecipients   `json:"recipients"`
-	Content     MailContent      `json:"content"`
-	Attachments []MailAttachment `json:"attachments"`
+	Recipients  MailRecipients
+	Content     MailContent
+	Attachments []MailAttachment
 }
 
 type MailRecipients struct {

@@ -8,17 +8,17 @@ import (
 )
 
 type mailMessage struct {
-	Attachments                    []MailAttachment `json:"attachments"`
+	Attachments                    []MailAttachment `json:"attachments,omitempty"`
 	Content                        MailContent      `json:"content"`
 	Recipients                     MailRecipients   `json:"recipients"`
-	ReplyTo                        []MailAddress    `json:"replyTo"`
+	ReplyTo                        []MailAddress    `json:"replyTo,omitempty"`
 	SenderAddr                     string           `json:"senderAddress"`
 	UserEngagementTrackingDisabled bool             `json:"userEngagementTrackingDisabled"`
 }
 
 func (c *Client) newMailMessage(mail Mail) mailMessage {
 	return mailMessage{
-		nil,
+		mail.Attachments,
 		mail.Content,
 		mail.Recipients,
 		nil,
